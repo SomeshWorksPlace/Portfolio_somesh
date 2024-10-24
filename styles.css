@@ -485,98 +485,47 @@ h3 {
 	}
 }
 
-.certification{
-
-background-color: #00b3b3;
-border-radius: 30px;
-	.Hackerrank
-	{
-		display: grid;
-		background-color: #00b3b3;
-		border-radius: 30px;
-		
-	gap: 40px;
-	grid-template-columns: repeat(2, 1fr);
-	@media(max-width: 1024px)
-	    {
-		flex-direction: column;
-	    }
-    }
-	.custom-title {
-		font-family:   "Sacramento", cursive;
-		font-size: 5rem;
-		color: #150707; 
-		text-align: center;
-		text-decoration: underline;
-		margin-bottom: 20px;
-		text-transform: capitalize; 
-		letter-spacing: 2px; 
-	}
-	
-	article{
-		background-color: #5d0839;
-		border-radius: 30px;
-		padding:5px;
-		flex: 1;
-	h2
-	{
-		margin-top: 20px;
-		margin-bottom: 20px;
-	}
-	div
-	{
-		font-weight: 600;
-		margin-bottom: 10px;
-		color: #000000;
-	}	
-	article figure {
-		width: 100%;
-		padding-top: 56.25%;
-		overflow: scroll;
-		position: relative;
-		border-radius: 15px;
-	}
-	
- img {
-		/* position: relative; */
-	
-	object-fit: cover;
-	transition: transform 1.5s ease, filter 0.5s ease; 
-	border-radius: 15px;
-	filter: brightness(0.9) contrast(1.1); 
-	}
-	article figure img:hover {
-		transform: scale(1.05); /* Subtle zoom effect */
-		filter: brightness(1.1) contrast(1.2); /* Slightly brighter on hover */
-	}
-
-		figcaption 
-		{
-			position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background-color: rgba(24, 75, 152, 0.956);
-	color: var(--base-100);
-	text-align: center;
-	padding: 10px;
-	opacity: 0;
-	visibility: hidden;
-	transition: ease 0.3s all;
-		}
-
-		&:hover {
-			figcaption {
-				opacity:1;
-				visibility:visible;
-			}
-			img {
-				transform: scale(1);
-			}
-		}
-
-	}
+.certification {
+    padding: 20px;
 }
+
+.certification .Hackerrank {
+    display: flex;
+    flex-wrap: wrap; /* Allows the items to wrap for mobile view */
+    justify-content: center; /* Center the content */
+}
+
+.Hackerrank article {
+    width: 45%; /* Adjust the width for desktop */
+    margin: 10px;
+    text-align: center;
+}
+
+.Hackerrank img {
+    max-width: 100%; /* Ensure images don't overflow their containers */
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .Hackerrank article {
+        width: 100%; /* Full width on smaller screens */
+    }
+    
+    .certification {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .certification h2 {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+    }
+
+    .Hackerrank article {
+        width: 100%; /* Stack items vertically on mobile */
+    }
+}
+
 .work-experience {
 	.jobs {
 		display:flex;
@@ -715,67 +664,71 @@ border-radius: 30px;
                }
 			}
 }
-	
-
-	.projects {
-		/* Any styles for the container can go here */
-		background: linear-gradient(135deg, #da8911, #0a14d8); /* Subtle gradient background */
+.projects {
+    background: linear-gradient(135deg, #da8911, #0a14d8); /* Gradient background */
     border-radius: 30px; /* Rounded corners */
     padding: 20px;
-	text-decoration: underline;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    text-decoration: underline;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
     overflow: hidden;
     position: relative;
-	}
+}
 
 .projects-info {
-     display: grid;/*grid */
+    display: grid;
     grid-gap: 30px;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns for 3 images */
-    grid-template-rows: repeat(1, 1fr); /* Single row */
-    height: 500px; /* Adjust height as needed */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
+    height: auto;
 }
 
 .bento-item {
-    padding: 20px; 
-    background-color: var(--base-100);
-    border-radius: 15px;
     position: relative;
+    border-radius: 15px;
     overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
 .bento-item img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
     width: 100%;
+    height: 100%;
     object-fit: cover;
-    transition: ease 0.3s all; /* Adjusted for faster effect */
+    transition: transform 0.3s ease;
 }
 
 .bento-item:hover img {
-    transform: scale(1.2);
+    transform: scale(1.1); /* Zoom effect on hover */
 }
 
-@media(max-width:924px) {
-    .bento-grid {
-        grid-template-columns: repeat(1, 1fr); /* Single column for smaller screens */
-        grid-template-rows: repeat(3, 1fr); /* 3 rows for 3 images */
+/* Media Query for Tablet */
+@media(max-width: 924px) {
+    .projects-info {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium-sized screens */
     }
 }
 
-@media(max-width:768px) {
-    .bento-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
+/* Media Query for Mobile */
+@media(max-width: 768px) {
+    .projects-info {
+        grid-template-columns: 1fr; /* Single column for small screens */
+        grid-gap: 20px;
     }
+    
     .bento-item {
-        height: 240px;
+        height: 240px; /* Adjust the height for mobile */
     }
 }
+
+@media(max-width: 480px) {
+    .projects-info {
+        grid-gap: 10px; /* Smaller gap for very small screens */
+    }
+    
+    .bento-item {
+        height: 180px; /* Reduce the height further for mobile */
+    }
+}
+
 
 /* ---------------------------------- */
 #section-wrapper{
