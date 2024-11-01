@@ -11,7 +11,7 @@
 
 :root {
 	--base: #555;
-	--base-100: #f1f1f1;
+	--base-100: #f1f1f1; 
 	--base-400: #555;
 	--base-800: #000;
 	--yellow: #ffda4b;
@@ -31,13 +31,13 @@ body {
 	font-style: normal;
 	font-size : 20px;
 	/* ---------------------------------- */
-	/* background: linear-gradient(135deg, #ff6b6b, #f8e71c); /* Replace with your desired gradient */
+	
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif; 
 
 }
-
+/* General styles for links */
 a {
     text-decoration: none;
     color: var(--blue);
@@ -48,17 +48,20 @@ a {
     text-shadow: 1px 1px 2px rgb(5, 238, 242);
 }
 
+/* Logo image styling */
 .logo img {
-    width: 300%; 
-    height: 55px;;
-    object-fit: inherit;    /* Ensures the image fits inside the circle without distortion */
+    width: auto; /* Maintain aspect ratio */
+    height: 55px; /* Set a fixed height */
+    object-fit: cover; /* Ensures the image fits inside the circle without distortion */
 }
 
+/* Hover effects for links */
 a:hover {
     text-decoration: underline;
     color: var(--dark-blue); /* A darker shade on hover for emphasis */
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.832); /* Enhanced shadow on hover */
+   
 }
+
 header {
 	padding-top:10px;
 	padding-bottom:10px;
@@ -66,73 +69,33 @@ header {
 	justify-content:space-between;
 	max-width:1440px;
 	margin:auto;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.225);
+	border-bottom: 1px solid rgba(165, 102, 102, 0.901);
 
-	
+	.logo-holder {
+		display:flex;
+		padding:10px;
+		align-items:center;
+		font-weight:600;
+		color: blueviolet;
 		
 		.logo {
 			display:flex;
 			align-items:center;
 			justify-content:center;
-			font-size:30px;
-			background: linear-gradient(45deg, #000000, #ff0000);
-			color: #000000; /* White text for contrast */
-        height: 70px; /* Slightly larger size for the logo */
-        width: 70px;
-        margin-right: 20px;
-        border-radius: 50%;
-        box-shadow: 0 4px 10px rgba(255, 75, 43, 0.5); /* Shadow matching the gradient */
-        transition: transform 0.3s ease-in-out; /* Smooth hover animation */
-		}
-		.logo:hover {
-			transform: scale(1.1); /* Scale up the logo slightly on hover */
+			font-size:32px;
+			background-color: rgb(154, 190, 9);
+			color: rgb(232, 21, 21);
+			height:64px;
+			width:64px;
+			margin-right:20px;
+			border-radius:50%;
 		}
 		.logo-text {
 			flex:1;
-	/* Additional */
-        font-size: 18px;
-        color: var(--base-100); /* Light text color */
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Subtle text shadow for depth */
+			color: rgb(36, 32, 32)
+			;
 		}
-	
-	.logo-holder {
-		display: flex;
-		align-items: center;
-		text-decoration: none;
-		transition: transform 0.3s ease-in-out;
 	}
-	
-	.logo {
-		font-size: 40px;
-		font-weight: bold;
-		
-		background: linear-gradient(135deg, #fcf809, #06daff);
-		padding: 10px 20px;
-		border-radius: 50%;
-		box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-		transition: transform 0.3s ease-in-out;
-	}
-	
-	.logo-text {
-		font-size: 24px;
-		margin-left: 15px;
-		color: 	#000000;
-		font-weight: 500;
-		text-transform: uppercase;
-		letter-spacing: 2px;
-		opacity: 0.8;
-		transition: opacity 0.3s ease-in-out;
-	}
-	
-	.logo-holder:hover .logo {
-		transform: scale(1.1);
-	}
-	
-	.logo-holder:hover .logo-text {
-		opacity: 1;
-		color: #0059ff;
-	}
-	
 
 	nav {
 		display:flex;
@@ -142,24 +105,23 @@ header {
 			list-style-type: none;
 			gap:5px;
 			li {
-				display:grid;
+				display:inline-block;
 				a {
-					text-decoration:underline;
 					display:inline-block;
 					padding:10px 20px;
-					color:#0a0a0ae8;
+					color:rgba(23, 16, 16, 0.878);
 					&:hover {
-						background-color: #ff660039;
-						border-radius:20px;
-						
+						background-color: #00000000;
+
+						border-radius:10px;
+						text-decoration:none;
 					}
 				}
-				
 			}
 		}
 		.mobile-toggle {
 			display:none;
-			color:#00b3b3;
+			color:var(--base-800);
 			padding:10px;
 			@media (max-width:768px){
 				display:inline-block;
@@ -196,6 +158,7 @@ header {
 		}
 	}
 }
+
 
 section {
 	max-width:1440px;
@@ -267,7 +230,8 @@ h1 {
 		flex-direction:column;
 		justify-content:center;
 		transition: transform 0.3s ease, box-shadow 0.3s ease;
-		&:hover {
+		&:hover 
+		{
 			transform: translateY(-5px); /* Lift effect on hover */
 			box-shadow: 0 8px 25px rgba(0, 0, 0, 0.547); /* Enhance shadow on hover */
 		  }
@@ -357,27 +321,41 @@ h1 {
 		  }
 	}
 }
-
 .logos {
-	background-color: #15c6c6;
-	border-radius:30px;
-	padding:30px 0px;
-	@media (max-width:1440px){
-		border-radius:0px;
+	background-color: #15c6c64a;
+	border-radius: 10px;
+	padding:15px 0;
+	
+	@media (max-width: 1440px) {
+		border-radius: 0;
 	}
+	
+	@media (max-width: 768px) { /* Adjustments for mobile view */
+		padding: 10px 0;
+		
+		.marquee {
+			height: 50px; /* Reduce height for smaller screens */
+			.track {
+				gap: 5px; /* Smaller gap between items */
+				animation: marquee 20s linear infinite; /* Faster animation */
+			}
+		}
+	}
+	
 	.marquee {
-		width:100vw;
-		max-width:100%;
-		height:130px;
+		width: 100vw;
+		max-width: 100%;
+		height: 130px;
 		overflow: hidden;
-		position:relative;
+		position: relative;
+		
 		.track {
-			position:absolute;
-			white-space:nowrap;
-			will-change:var(--yellow);
+			position: absolute;
+			white-space: nowrap;
+			will-change: var(--yellow);
 			animation: marquee 40s linear infinite;
-			display:flex;
-			gap:10px;
+			display: flex;
+			gap: 10px;
 		}
 	}
 }
@@ -390,6 +368,7 @@ h1 {
 		transform: translateX(-50%);
 	}
 }
+
 
 h2 {
 	font-size:64px;
@@ -409,90 +388,118 @@ h2 {
 	}
 }
 
-h3 {
+h4 {
 	font-size:32px;
 	font-weight:600;
 	line-height:1;
 	margin-bottom:20px;
 	color: var(--base-800);
 }
+/* ----------------------------------------------------------------------- */
 
-.skills {
+		
+	
+/* ------------------------------------------------------------------------ */
+  /* Skills Section Styling */
+  .skills 
+  {
+	background-color:var(--yellow-100);
+	padding: 20px;
+	border-radius: 30px;
+  }
+  
+  /* Blue holder styling */
+  .holder-blue {
+	background: linear-gradient(135deg, rgba(135, 165, 179, 0.511), rgba(199, 157, 157, 0.456));
+	border-radius: 30px;
+	padding: 30px;
+	display: flex;
+	justify-content: space-between;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.253);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Column layout */
+  .left-column, .right-column {
+	flex: 1;
+	padding: 10px;
+	width: 100%; /* Ensure full width on small screens */
+	box-sizing: border-box; /* Include padding in element's total width */
+  }
+  
+  .left-column h3, .right-column h3 {
+	margin-top: 20px;
+	color: #333;
+  }
+  
+  /* Left Column (Skills List) Styling */
+  .left-column ul {
+	list-style-type: none;
+	padding: 0;
+  }
+  
+  .left-column ul li {
+	display: inline-block;
+	background-color: var(--blue-400, #007acc6c);
+	padding: 5px 10px;
+	margin: 5px;
+	border-radius: 15px;
+	color: #000000;
+	font-size: 0.9em;
+  }
+  
+  /* Right Column (About Me Section) Styling */
+  .right-column {
+	background: rgba(135, 201, 245, 0.716);
+	border-radius: 15px;
+	padding: 20px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive Design for Mobile View */
+  @media (max-width: 768px) {
 	.holder-blue {
-		background: linear-gradient(135deg, rgba(135, 165, 179, 0.511), rgba(199, 157, 157, 0.456)); /* Adds a subtle gradient */
-		border-radius: 30px;
-		padding: 30px;
-		display: flex;
-		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.253); /* Adds soft shadow for depth */
-		transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
-		
-		/* Hover effects */
-		&:hover {
-			transform: translateY(-10px); /* Slight lift on hover */
-			box-shadow: 0 15px 30px rgba(0, 0, 0, 0.362); /* Deepen shadow */
-		}
-	
-		/* Responsive design */
-		@media (max-width: 1024px) {
-			flex-direction: column;
-			padding: 20px; /* Adjust padding for smaller screens */
-		}
-	
-		.left-column {
-			flex:1;
-		
-			ul {
-				list-style-type: none;
-				gap:10px;
-				margin-right:100px;
-				margin-bottom:20px;
-				li {
-					display: inline-block;
-					background-color: var(--blue-400);
-					padding: 10px 20px;
-					border-radius: 15px;
-					margin-bottom: 10px;
-					box-shadow: 0 0 15px rgba(0, 132, 255, 0.4); /* Initial glow effect */
-					transition: box-shadow 0.3s ease-in-out, transform 0.3s ease; /* Smooth transition */
-			
-					/* Hover state with a more intense glow */
-					&:hover {
-						box-shadow: 0 0 25px rgba(0, 132, 255, 0.8), 0 0 50px rgba(0, 132, 255, 0.6);
-						transform: scale(1.05); /* Slight scaling effect on hover */
-					}
-			
-					/* Optional glowing animation */
-					animation: glow 2s infinite alternate ease-in-out;
-				}
-			}
-		}
-		.info{
-			display: flex;
-			justify-content: center;
-			text-decoration: underline; 
-		}
-		.right-column {
-			flex:1;
-			p {
-				margin-bottom:20px;
-			}
-		}
-		.right-info{
-			display: flex;
-			justify-content: center;
-			text-decoration: underline; 
-		}
+	  flex-direction: column;
+	  padding: 20px;
 	}
-}
-
+  
+	.left-column, .right-column {
+	  padding: 20px;
+	  width: 100%; /* Ensures columns take full width */
+	}
+  
+  
+	.left-column ul li {
+	  font-size: 0.85em;
+	  padding: 5px;
+	  width: 30%; /* Use percentage for better layout on small screens */
+	  box-sizing: border-box;
+	}
+  }
+  
+  @media (max-width: 480px) {
+	.left-column ul li {
+	  font-size: 0.8em;
+	  padding: 4px;
+	  width: 100%; /* Full width for each item on very small screens */
+	}
+  
+	.left-column h3, .right-column h3 {
+	  font-size: 1em; /* Smaller heading font size for mobile */
+	}
+  }
+   
 .certification {
-    padding: 20px;
-}
+    padding: 30px;
+	background-color: var(--yellow-100);
+	border-radius: 30px;
+    }
+
 
 .certification .Hackerrank {
     display: flex;
-    flex-wrap: wrap; /* Allows the items to wrap for mobile view */
-    justify-content: center; /* Center the content */
+    flex-wrap: wrap; 
+    justify-content: center; 
 }
 
 .Hackerrank article {
@@ -508,11 +515,11 @@ h3 {
 
 @media (max-width: 768px) {
     .Hackerrank article {
-        width: 100%; /* Full width on smaller screens */
+        width: 100%; 
     }
     
     .certification {
-        padding: 10px; /* Reduce padding for smaller screens */
+        padding: 10px; 
     }
 }
 
@@ -606,26 +613,31 @@ h3 {
 		}
 
 	}
-	article {
+	article 
+	{
 		background-color: var(--yellow-100);
 		padding:30px;
 		
 		border-radius:30px;
 		flex:1;
-		h3 {
+		h3
+		{
 			margin-top:20px;
 			margin-bottom:10px;
 		}
-		div {
+		div
+		{
 			font-weight:600;
 			margin-bottom:5px;
 			color: var(--base-800);
 		}
-		p {
+		p 
+		{
 			margin-bottom:10px;
 		}
 	}
-		figure {
+		figure 
+		{
 			width:100%;
 			padding-top:56.25%;
 			overflow:hidden;
@@ -653,20 +665,22 @@ h3 {
 				transition: ease 0.3s all;
 			}
 
-			&:hover {
-				figcaption {
+			&:hover 
+			{
+				figcaption 
+				{
 					opacity:1;
 					visibility:visible;
 				}
 				img {
 					transform: scale(1.2);
-						}	
-               }
-			}
+					}	
+            }
+	    }
 }
 .projects {
-    background: linear-gradient(135deg, #da8911, #0a14d8); /* Gradient background */
-    border-radius: 30px; /* Rounded corners */
+    background: var(--yellow-100);
+    border-radius: 30px ; 
     padding: 20px;
     text-decoration: underline;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
@@ -677,7 +691,7 @@ h3 {
 
 .projects-info {
     display: grid;
-    grid-gap: 30px;
+    grid-gap: 60px; /* Increased space between projects */
     grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
     height: auto;
 }
@@ -703,15 +717,16 @@ h3 {
 /* Media Query for Tablet */
 @media(max-width: 924px) {
     .projects-info {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium-sized screens */
+        grid-template-columns: repeat(2, 1fr); 
+        grid-gap: 40px; /* Increased space for medium screens */
     }
 }
 
 /* Media Query for Mobile */
 @media(max-width: 768px) {
     .projects-info {
-        grid-template-columns: 1fr; /* Single column for small screens */
-        grid-gap: 20px;
+        grid-template-columns: 1fr; 
+        grid-gap: 30px; /* Increased space for small screens */
     }
     
     .bento-item {
@@ -721,7 +736,7 @@ h3 {
 
 @media(max-width: 480px) {
     .projects-info {
-        grid-gap: 10px; /* Smaller gap for very small screens */
+        grid-gap: 20px; /* Increased space for very small screens */
     }
     
     .bento-item {
@@ -730,98 +745,17 @@ h3 {
 }
 
 
-/* ---------------------------------- */
-#section-wrapper{
-    width: 100%;
-    padding: 10px;
-}
-.box-wrapper{
-    position: relative;
-    display: table;
-    width:1100px;
-    margin:auto;
-    margin-top:35px;
-    border-radius: 30px;
-	
-}
-.info-wrap{
-    width:40%;
-    height: 613px;
-    padding: 40px;
-    float: left;
-    display: block;
-    border-radius: 30px 0px 0px 30px;
-	border-color: #00f7ff;
-	background: linear-gradient(135deg, rgb(223, 66, 92) 50%, rgb(55, 167, 242) 100%);
-	color: #fff;
-}
-.info-title{
-    text-align: left;
-    font-size: 28px;
-	text-decoration: underline;
-    letter-spacing: 0.5px;
-	text-align: center;
-}
-.info-sub-title{
-    font-size: 18px;
-    font-weight: 300;
-    margin-top: 17px;
-    letter-spacing: 0.5px;
-    line-height: 26px;
-}
-.info-details {
-    list-style: none;
-    margin: 60px 0px;
-}
-.info-details li {
-    margin-top: 25px;
-    font-size: 18px;
-   list-style-type: square;
- /*list-style-image: url('bullet-image.png'); /* Custom image as bullet */    
-   padding-left: 20px;
-   	font-style: italic;
-	font-weight: bold;
-	
-}
-
-.info-details li a {
-    color: #000000;
-    text-decoration: none;
-}
-.info-details li a:hover {
-    color: #24c7bc;
-}
-
-.social-icons {
-    list-style: none;
-    text-align: center;
-    margin: 20px 0px;
-}
-.social-icons li {
-    display: inline-block;
-}
-/* .social-icons li i {
-    background: #000000;
-    color: #fff;
-    padding: 15px;
-    font-size: 20px;
-    border-radius: 22%;
-    margin: 0px 5px;
-    cursor: pointer;
-    transition: all .5s;
-}
-.social-icons li i:hover {
-    background: #fff;
-    color: #000000; 
-}*/
+/* ------------------------ */
 .form-wrap{
-    width:60%;
-    float: right;
-    padding:40px 25px 35px 25px;
-    border-radius: 0px 30px 30px 0px;
-	border-color: #000000;
-
-	background:  rgb(212, 208, 200);
+	width: 60%;
+    padding: 40px 25px 35px 25px;
+    border-radius: 30px;
+    border: 1px solid #000000; /* Added border style */
+    background:var(--yellow-100);
+    /* Centering the block */
+    margin: 0 auto; /* Horizontally center the block */
+    float: none; /* Remove float to allow centering */
+    display: block;
 
 }
 .form-title{
@@ -844,7 +778,7 @@ h3 {
     outline:none;
     background: none;
     font-size: 18px;
-    color:#0d0303;
+    color:#0d0303fa;
     padding: 20px 10px 20px 5px;
     width:100%
 }
@@ -857,9 +791,18 @@ h3 {
     float: left;
     padding: 0px 30px;
     margin: 14px 12px;
+	
     border-radius: 25px;
-    box-shadow: inset 8px 8px 8px #0a1015bc, inset -8px -8px 8px #ffffff5e;
+    box-shadow: inset 8px 8px 8px #1b2e3e3d, inset -8px -8px 8px #ffffff6f;
 }
+/* Remove arrows in Chrome, Safari, Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+	color: #000000;
+}
+
 
 .form-fields .form-group:last-child {
     width: 96%;
@@ -916,5 +859,42 @@ h3 {
     }
    
 }
+/* Footer Styling */
+.footer {
+    background-color: #222222; /* Dark background */
+    color: #ffffff; /* White text */
+    padding: 30px 30px;
+
+    text-align: center;
+}
+
+
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-bio {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+
+
+.footer-copyright {
+	text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+    color: #cccccc; /* Lighter gray text */
+}
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
 /* ------------------------------------ */
 
