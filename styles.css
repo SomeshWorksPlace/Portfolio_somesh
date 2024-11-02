@@ -58,7 +58,7 @@ a {
 /* Hover effects for links */
 a:hover {
     text-decoration: underline;
-    color: var(--dark-blue); /* A darker shade on hover for emphasis */
+    color: rgb(214, 31, 52); /* A darker shade on hover for emphasis */
    
 }
 
@@ -220,10 +220,13 @@ h1 {
 	@media (max-width:1024px){
 		flex-direction:column;
 	}
+	@media (min-width: 768px) {
+		flex-direction: row; /* Row layout for tablets and up */
+	}
 	.hero-blue {
 		flex:1;
 		/* background-color: rgb(88, 185, 202); */
-		background: linear-gradient(135deg, rgba(88, 185, 202, 1), rgba(65, 158, 172, 1));
+		background: linear-gradient(135deg, rgba(5, 183, 214, 0.73), rgba(65, 158, 172, 1));
 		border-radius:30px;
 		padding:30px;
 		display:flex;
@@ -237,7 +240,7 @@ h1 {
 		  }
 		  span {
 			font-size: 18px;
-			color: #fffefe;
+			color: #fffefe00;
 			font-weight: 500;
 			margin-top: 20px;
 			@media (max-width:768px){
@@ -247,6 +250,10 @@ h1 {
 		h1, p {
 			color: #000000;
 			text-align: start;
+			font-size: 1.2em; /* Responsive font size */
+			@media (max-width: 480px) {
+				font-size: 1em; /* Smaller font for extra small screens */
+			}
 		  }
 		
 		.call-to-action {
@@ -256,8 +263,8 @@ h1 {
 			a {
 			  display: inline-block;
 			  padding: 12px 20px;
-			  background-color: #007bff;
-			  color: #fff;
+			  background-color: #007bff8d;
+			  color: #060303;
 			  text-decoration: none;
 			  font-weight: bold;
 			  border-radius: 8px;
@@ -266,10 +273,18 @@ h1 {
 			  transition: all 0.3s ease;
 			  
 			  &:hover {
-				background-color: #0056b3;
+				
 				box-shadow: 0 0 15px rgba(0, 2, 4, 0.593);
 				transform: translateY(-3px); /* Slight lift effect */
 			  }
+			}
+			@media (min-width: 768px) {
+				flex-direction: row; /* Arrange buttons horizontally on larger screens */
+				a {
+					margin-right: 10px; /* Add space between buttons when horizontal */
+					margin-bottom: 0; /* Remove bottom margin in horizontal layout */
+					justify-content: center;
+				}
 			}
 		  }
 		  
@@ -878,6 +893,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .footer-bio {
     font-size: 16px;
     margin-bottom: 20px;
+	text-align: center;
 }
 
 
